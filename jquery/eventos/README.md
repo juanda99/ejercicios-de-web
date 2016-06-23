@@ -20,4 +20,4 @@ Algunas preguntas...
 4. Crea un formulario con una caja de texto donde se introduzcan elementos para la cesta de la compra. Cada elemento que se añada mediante el formulario se añadirá en una lista en la propia página web. Los elementos de la lista sobre los que se haga clic se deberán marcar con algún efecto: negrita, subrayado, etc. 
 
 5. Crea una tabla  con los máximos goleadores de la liga de futbol española. La cabecera estará compuesta de Nombre Jugador, Club y número de goles. Cuando nos pongamos encima de cada uno deberá aparecer un pequeño tooltip que muestre los goles que ha marcado de penalty, los partidos y minutos jugados y los goles/min.
-![](tabla_goleadores.gif)
+![](tabla-goleadores.gif)
