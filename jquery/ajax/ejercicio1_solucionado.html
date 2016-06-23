@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - jQuery y ajax</title>
+    <script src="jquery-1.10.2.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $("#enlaceajax").click(function(evento) {
+                evento.preventDefault();
+                $("#destino").load("contenido-ajax.html");
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+    <a href="#" id="enlaceajax">Haz clic!</a>
+    <br>
+    <div id="destino"></div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicios eventos jquery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	/*posición 1
+		function clicAlerta() {
+			alert("Has hecho clic");
+		}
+	*/
+	$(document).ready(function() {
+		//también podríamos haber utilizado mouseover y mouseout
+		//también hover(), que sería lo más fácil.
+		$("p").hover(function() {
+			$(this).css("color", "red");
+		}, function() {
+			$(this).css("color", "black");
+
+		});
+	/*posición 2
+		function clicAlerta() {
+			alert("Has hecho clic");
+		}
+	*/
+
+	});
+</script>
+</head>
+<body>
+	<script>
+	/*posición 3*/
+		function clicAlerta() {
+			alert("Has hecho clic");
+		}
+		$("body").on("click", ".miclase", clicAlerta);
+	</script>
+	<p class="miclase">Primer párrafo</p>
+	<p>Otro párrafo</p>
+</body>
+</html>
+
+
+<!-- Estamos buscando en todo el body elementos del tipo class="miclase" para asociarles
+al evento click como event handler la función clicAlerta:
+$("body").on("click", ".miclase", clicAlerta);
+
+Ojo, la función clicAlerta debe estar definida directamente en unas etiquetas de script, como en posición 1 o posición2.
+
+Si la definimos dentro de otra función (posición 2), no se podrá acceder a clicAlerta desde fuera de ella. 
+En este caso no se podría acceder a ella desde fuera del $(document).ready
+-->

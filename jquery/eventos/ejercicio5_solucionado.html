@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eventos - jQuery</title>
+<style>
+
+.striped {
+	background-color: gray;
+}
+
+.cabecera {
+	background-color: black;
+	color: white;
+	font: bold;
+}
+
+tbody tr:hover {
+	font: bold;
+	background-color: yellow;
+}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	border: 1px solid #333;
+	background-color: #161616;
+	border-radius: 5px;
+	padding: 10px;
+	color: #fff;
+	font-size: 12px Arial;
+	z-index: 2;
+}
+</style>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$("table thead").addClass("cabecera");
+		$("table tr:nth-child(even)").addClass("striped");
+		$('td:first-child').hover(
+				function() {
+					// Hover over code
+					var title = $(this).attr('title');
+					$(this).data('tipText', title).removeAttr('title');
+					$('<p class="tooltip"></p>').text(title).appendTo(
+							'body').fadeIn('slow');
+				}, function() {
+					// Hover out code
+					$(this).attr('title', $(this).data('tipText'));
+					$('.tooltip').remove();
+				}).mousemove(function(e) {
+			var mousex = e.pageX + 20; //Get X coordinates
+			var mousey = e.pageY + 10; //Get Y coordinates
+			$('.tooltip').css({
+				top : mousey,
+				left : mousex
+			});
+		});
+		/*
+		$("td:first-child").mouseenter(function(event) {
+			var tooltipX = event.pageX - 8;
+			var tooltipY = event.pageY + 8;
+			$('div.tooltip').css({
+				top : tooltipY,
+				left : tooltipX
+			});
+			$('div.tooltip').css("display", "block")
+		})
+		$("td:first-child").mouseleave(function() {
+			$('div.tooltip').css("display", "none")
+		})
+
+		var tooltipX = event.pageX - 8;
+		var tooltipY = event.pageY + 8;
+		$('div.tooltip').css({
+			top : tooltipY,
+			left : tooltipX
+		});
+	*/
+	});
+</script>
+</head>
+<body>
+	<div class="tooltip"></div>
+	<table>
+		<thead>
+			<tr>
+				<td>Jugador</td>
+				<td>Equipo</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td
+					title="17 goles, uno de penalty.  12 partidos jugados, 1021 minutos. 1 gol cada 60 minutos.">Lionel
+					Messi</td>
+				<td>F.C.Barcelona</td>
+			</tr>
+			<tr>
+				<td
+					title="12 goles, 4 de penalty.  12 partidos jugados, 1010 minutos. 1 gol cada 84 minutos.">Cristiano
+					Ronaldo</td>
+				<td>Real Madrid</td>
+			</tr>
+			<tr>
+				<td
+					title="10 goles, 4 de penalty.  10 partidos jugados, 810 minutos. 1 gol cada 81 minutos.">Radamer
+					Falcao</td>
+				<td>Atlético de Madrid</td>
+			</tr>
+			<tr>
+				<td
+					title="8 goles, uno de penalty.  12 partidos jugados, 894 minutos. 1 gol cada 112 minutos.">Aritz
+					Aduriz</td>
+				<td>Atletic Club</td>
+			</tr>
+			<tr>
+				<td
+					title="7 goles, ninguno de penalty.  10 partidos jugados, 640 minutos. 1 gol cada 91 minutos.">Gonzalo
+					Higuain</td>
+				<td>Real Madrid</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

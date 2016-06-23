@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicios eventos jquery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+
+		//leemos mediante ajax de bbdd y lo ponemos en un bucle each:
+		$.each([ "judias", "patatas", "lechuga" ], function(index, value) {
+			$("ul").append("<li style='color:grey'>" + value + "</li>");
+		});
+
+		function addLista(miEvento) {
+			miEvento.preventDefault();
+			elemento = $("input:text").val();
+			//lo insertamos mediante ajax en la bbdd
+			//si ha ido bien, lo añadimos también a la lista en pantalla,si no, lanzaríamos error
+			$("ul").append("<li style='color:grey'>" + elemento + "</li>");
+
+		}
+		/*
+		$("input:button").click(function() {
+			$("ul li").css("font-weight", "300");
+			$("ul li").css("color", "grey");
+		});
+		*/
+		$("input:button").click(function() {
+			$("ul li").each(function(){
+				$(this).css("color", "grey");
+				$(this).css("font-weight", "300");
+			});
+		});
+		
+		
+		$("input:submit").click(addLista);
+		$("ul").on("click", "li", function() {
+			//lo actualizamos mediante ajax en la bbdd
+			//si ha ido bien, hacemos el css posterior, si no, lanzaríamos error
+			$(this).css("font-weight", "700");
+			$(this).css("color", "black");
+		});
+	});
+</script>
+</head>
+<body>
+	<form method="post" action="#">
+		<label>Elemento para la cesta de la compra: <input type="text"></input></label>
+		<input type="submit" value="Añadir a la lista" /> <input type="button"
+			value="Compra realizada" />
+	</form>
+	<ul>
+		<li style="color: grey">Leche, que no falte la leche</li>
+	</ul>
+</body>
+</html>
+
+
+<!-- Este ejercicio es un caso típico en el que hace falta utilizar on():
+		$("ul").on("click", "li", function() {
+			//lo actualizamos mediante ajax en la bbdd
+			//si ha ido bien, hacemos el css posterior, si no, lanzaríamos error
+			$(this).css("font-weight", "700");
+			$(this).css("color", "black");
+		});
+
+Capturaremos el click en algún li directamente desde el ul. Eso nos garantizará que el manejador del evento
+esté asociado al evento click de los elementos de la lista que se creen dinamicamente, no solo a los tres que
+aparecen por defecto
+
+Un bucle each en jquery se hace medainte $.each. La función que recibe como parámetro, tiene a su vez dos parámetros, index y value
+que serán 0, 1 y 2 para el index y judias, patatas y lechuga para el value.
+
+-->

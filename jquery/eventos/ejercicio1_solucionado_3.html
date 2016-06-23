@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicios eventos jquery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		//con hover y con on, solo lleva una función y no dos....
+		$("p").on("hover", function(e) {
+			if (e.type == "mouseenter")
+				$(this).css("color", "red");
+			else
+				//mouseleave:
+				$(this).css("color", "black");
+		});
+
+		function clicAlerta() {
+			alert("Has hecho clic");
+		}
+
+	});
+</script>
+</head>
+<body>
+	<script>
+		function clicAlerta() {
+			alert("Has hecho clic2");
+		}
+		$("body").on("click", ".miclase", clicAlerta);
+	</script>
+	<p class="miclase">Primer párrafo</p>
+	<p>Otro párrafo</p>
+</body>
+</html>

@@ -18,9 +18,9 @@
 
 9. Visualiza el fichero ejercicio9.html Al hacer clic sobre cada una de las imágenes, la imagen pulsada debe desaparecer mediante un efecto tipo slide.
 
-10. Corrige el código de ejercicio1.html para que, sin cambiar el efecto que se produce sobre el párrafo cuando pulsamos el botón, la alerta salte en el momento adecuado.
+10. Corrige el código de ejercicio10.html para que, sin cambiar el efecto que se produce sobre el párrafo cuando pulsamos el botón, la alerta salte en el momento adecuado.
 
-11. Corrige el código de ejercicio2.html para que, sin cambiar el efecto que se produce sobre los párrafos cuando pulsamos el botón, la alerta salte una sola vez y en el momento adecuado.
+11. Corrige el código de ejercicio11.html para que, sin cambiar el efecto que se produce sobre los párrafos cuando pulsamos el botón, la alerta salte una sola vez y en el momento adecuado.
 
 12. Al pulsar el botón los párrafos tiene que desaparecer con un efecto de deslizamiento de 3s, y a continuación (sin pulsar) volver a mostrarse con otro efecto de deslizamiento de 1s.
 
@@ -35,4 +35,4 @@ Debe haber tres botones, uno para empezar la animación, otro para parar cada an
 
 17. Completa el ejercicio8 para que la imagen vuelva al punto inicial y repita el movimiento de ida y vuelta de forma indefinida.
 
-18. Cambia la opacidad del título de ejercicio9.html pulsando en el desplegable.
+18. Cambia la opacidad del título de ejercicio18.html pulsando en el desplegable.

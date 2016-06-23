@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicio 5 - jQuery</title>
+<script src="jquery-1.10.2.js" ></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		$("table tr:nth-child(even)").addClass("striped");
+		/*si ponemos tr:even o tr:odd cuenta también la cabecera, así que el resultado no siempre es el esperado*/
+	});
+</script>
+
+<style type="text/css">
+body {
+	font-size: 1.3em;
+}
+
+table {
+	background-color: black;
+	border: 1px black solid;
+	border-collapse: collapse;
+}
+
+th {
+	border: 1px outset silver;
+	background-color: maroon;
+	color: white;
+}
+
+tr {
+	background-color: white;
+	margin: 1px;
+}
+
+tr.striped {
+	background-color: coral;
+}
+
+td {
+	padding: 1px 8px;
+}
+</style>
+<body>
+	<table>
+		<tr>
+			<th>Identificador</th>
+			<th>Fruta</th>
+			<th>Precio</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Manzanas</td>
+			<td>0.60</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Naranjas</td>
+			<td>0.50</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Platanos</td>
+			<td>0.10</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Fresas</td>
+			<td>0.05</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Zanahorias</td>
+			<td>0.10</td>
+		</tr>
+	</table>
+</body>
+</html>

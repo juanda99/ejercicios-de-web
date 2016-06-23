@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio3 - jQuery</title>
+<script src="jquery-1.10.2.js" ></script>
+<script>
+	$(document).ready(function() {
+		//alert ($("#micapa").css("color"));
+
+		$("#micapa").css("color", "green");
+		//alert ($("#micapa").css("color"));
+
+		$("#micapa").css({
+			"background-color" : "#ff8800",
+			"position" : "absolute",
+			"width" : "100px",
+			"top" : "100px",
+			"left" : "200px"
+		})
+
+		$("#fondogris").click(function(e) {
+			e.preventDefault();
+			$("#micapa").css("background-color", "#999");
+		})
+
+		$("#fondonaranja").click(function(e) {
+			e.preventDefault();
+			$("#micapa").css("background-color", "#f80");
+		})
+
+		$("#ocultarmostrar").click(function(e) {
+			e.preventDefault();
+			var c = $("#micapa");
+			var mostrandose = c.css("display");
+			if (mostrandose == "block") {
+				c.css("display", "none");
+			} else {
+				c.css("display", "block");
+			}
+		})
+
+		$("#micapa").mouseover(function() {
+			antiguoLeft = parseInt($(this).css("left"));
+			//alert (antiguoLeft);
+			$(this).css("left", antiguoLeft + 10 + "px");
+		})
+
+	});
+</script>
+</head>
+<body>
+	<div id="micapa">hola!</div>
+	<a href="#" id="fondogris">Poner fondo gris</a>
+	<br>
+	<a href="#" id="fondonaranja">Poner fondo naranja</a>
+	<br>
+	<a href="#" id="ocultarmostrar">Ocultar o mostrar</a>
+</body>
+</html>
+
+
+<!-- Para ocultar o mostrar la etiqueta lo podíamos haber hecho más sencillo con un simple:
+			var c = $("#micapa");
+			c.toggle();
+			
+     En el mouseover también podríamos haber utilizado por ej. el método animate.
+-->
+			

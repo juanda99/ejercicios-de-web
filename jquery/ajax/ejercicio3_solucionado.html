@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 3 - jQuery y ajax</title>
+<script src="jquery-1.8.2.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		$("input:submit").click(function(evento) {
+			$.ajaxSetup ({
+				cache: false
+			});
+
+			evento.preventDefault();
+			miNombre=$("#nombre").val();
+			miEdad=$("#edad").val();
+			$("#destino").load("recibe-parametros-get.php", "nombre="+miNombre+"&edad="+miEdad);
+            $("#destino").load("recibe-parametros-get.php?nombre="+miNombre+"&edad"+miEdad);
+		});
+	})
+</script>
+</head>
+<body>
+	<form action="recibe-parametros-get.php" method="get">
+		<label>Introduce tu nombre:</label> <input name="nombre" id="nombre" type="text"></input>
+		<label>Introduce tu edad:</label> <input name="edad" id="edad" type="text"></input>
+		<input type="submit">
+	</form>
+	<div id="destino"></div>
+</body>
+</html>
+
+
+<!-- Observaciones:
+    Da igual el method del form: POST o GET. Da igual el action que tenga asociado.
+    Vamos a capturar el submit del formulario y vamos a evitar que se envie. Lo envíaremos nosotros a mano mediante una petición ajax load().
+    La petición ajax debe ser get  ya que el parámetro que mandamos con los datos es un string "tipo get". Otra opción habría sido mandar todo directamente en la url,
+    tal y  como sería una petición GET (he comentado la línea).
+    Ojo, la caché en las peticiones GET puede estar "activa", así que si los datos son dinámicos, debería desactivarla.
+    
+    Observa que los valores de los campos del formulario los calculo "al vuelo". Pero tengo que obtenerlos de alguna forma para enviarselos al formulario.
+    Podría haberlo hecho más cómodo todavía con el método serialize del formulario: http://api.jquery.com/serialize/
+    
+    Ojo, como la petición en este caso es un GET, lo recogeré desde php mediante el array asociativo $_GET (que contiene una entrada por cada variable que envíamos vía GET).
+    También se podría haber utilizado el array $_REQUEST.
+-->

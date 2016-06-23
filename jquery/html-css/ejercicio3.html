@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 3 - jQuery</title>
+<script src="jquery-1.10.2.js" ></script>
+<script>
+	$(document).ready(function() {
+		//alert ($("#micapa").css("color"));
+
+		$("#micapa").css("color", "green");
+		//alert ($("#micapa").css("color"));
+
+		$("#micapa").css({
+			"background-color" : "#ff8800",
+			"position" : "absolute",
+			"width" : "100px",
+			"top" : "100px",
+			"left" : "200px"
+		}) 
+	});
+</script>
+</head>
+<body>
+	<div id="micapa">hola!</div>
+	<a href="#" id="fondogris">Poner fondo gris</a>
+	<br>
+	<a href="#" id="fondonaranja">Poner fondo naranja</a>
+	<br>
+	<a href="#" id="ocultarmostrar">Ocultar o mostrar</a>
+</body>
+</html>

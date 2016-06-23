@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicios eventos jquery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		//también podríamos haber utilizado mouseover y mouseout
+		//también hover(), que sería lo más fácil.
+		$("p").on("mouseenter mouseleave", function(e) {
+			//con ($(this).css("color")=="black") no me ha funcionado
+			if ($(this).css("color") == "rgb(0, 0, 0)")
+				$(this).css("color", "rgb(255, 0, 0)");
+			else
+				$(this).css("color", "black");
+		});
+
+		function clicAlerta() {
+			alert("Has hecho clic");
+		}
+
+		$(".miclase").on("click", clicAlerta);
+	});
+</script>
+</head>
+<body>
+
+	<p class="miclase">Primer párrafo</p>
+	<p>Otro párrafo</p>
+	<script>
+		
+	</script>
+</body>
+</html>
+
+
+<!-- No es necesario utilizar el evento on en ningún caso, con 
+$("p").mouseenter, $("p").mouseleave() y $(".miclase").click se podría haber resulto también
+
+La sentencia siguiente:
+$(".miclase").on("click", clicAlerta);
+
+Sería equivalente a:
+$(".miclase").on("click", ".miclase", clicAlerta);
+  -->

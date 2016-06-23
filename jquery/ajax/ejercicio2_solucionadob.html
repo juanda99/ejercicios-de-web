@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 2 - jQuery y ajax</title>
+<script src="jquery-1.10.2.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		$("#formulario").submit(function(evento) {
+			evento.preventDefault();
+			/*$("#destino").load("recibe-parametros.php", {
+				nombre: $("#nombre").val(),
+				edad: $("#edad").val()
+			});*/
+			/*El php recibe los parámetros, no lo que pongamos en el                 form!*/
+           /* $("#destino").load("recibe-parametros.php", {
+				nombre: $("#nombre").val(),
+				edad: "7"
+			});*/
+		});
+	})
+</script>
+</head>
+<body>
+	<form id="formulario" action="recibe-parametros.php" method="post">
+		<label>Introduce tu nombre:</label> <input id="nombre" type="text"></input>
+		<label>Introduce tu edad:</label> <input id="edad" type="text"></input>
+		<input type="submit">
+	</form>
+	<div id="destino"></div>
+</body>
+</html>

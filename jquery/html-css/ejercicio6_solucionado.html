@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 6 - jQuery</title>
+<style>
+label {
+	display: block;
+}
+</style>
+<script src="jquery-1.10.2.js" ></script>
+<script>
+	$(document).ready(
+			function() {
+				/*Inicializamos las variables, esto podría ser mediante una lectura en bbdd....*/
+				// Check all radio and check-box inputs on the page.
+				$('input:radio,input:checkbox').val(['Si',  'Baloncesto',
+				'Tenis', 'Waterpolo']);
+				// Podríamos hacer también una iteración entre los elementos para marcarlos checked....
+				// $('input:radio,input:checkbox').removeAttr('checked');
+				// or
+				// $('input:radio,input:checkbox').attr('checked', '');
+				//OJO: Igual hay que hacerlo con prop, no lo he probado con jQuery 1.10
+				
+				
+				
+				$("input:radio").click(
+						function() {
+							if ($(this).prop('value') == "No")
+								$('input:checkbox')
+										.prop('disabled', 'disabled').prop(
+												"checked", false);
+							else
+								$('input:checkbox').prop("disabled", false).prop(
+										"checked", false);
+
+						})
+
+			});
+</script>
+</head>
+<body>
+	<form>
+		<p>¿Te gustan los deportes?</p>
+		<label><input name="gustos" value="Si" type="radio" />Si</label> <label>
+		<input name="gustos" value="No" type="radio" />No</label> <label>Selecciona
+			tus deportes favoritos:</label> <label><input name="intereses"
+			value="Futbol" type="checkbox" />Futbol</label> <label><input
+			name="intereses" value="Baloncesto" type="checkbox" />Baloncesto</label> <label><input
+			name="intereses" value="Tenis" type="checkbox" />Tenis</label> <label><input
+			name="intereses" value="Waterpolo" type="checkbox" /> Waterpolo</label>
+	</form>
+</body>
+</html>
+
+
+
+				
+
+
+
+	
