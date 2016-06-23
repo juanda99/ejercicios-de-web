@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicio 6 - jQuery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function() {
+    $("#btn").click(function() {
+        alert("click!");
+    })
+        .mouseenter(function() {
+        console.log("EVENTO MOUSEENTER: Ha entrado el ratón");
+        //alert("¡Ha entrado el ratón!")
+    })
+        .mouseleave(function() {
+        console.log("EVENTO MOUSELEAVE: Ha salido el ratón");
+        //alert("¡Ha salido el ratón!")
+    })
+            .mouseover(function() {
+        console.log("EVENTO MOUSEOVER: Ha entrado el ratón");
+        //alert("¡Ha entrado el ratón!")
+    })
+        .mouseout(function() {
+        console.log("EVENTO MOUSEOUT: Ha salido el ratón");
+        //alert("¡Ha salido el ratón!")
+    })
+    
+    
+    
+    ;
+});
+</script>
+	
+<body>
+	<button id="btn">Botón</button>
+</body>
+</html>
+<!--
+Podemos utilizar mouseenter o mouseover para la entrada del ratón y mouseout y mouseleave para la salida.
+Si tuvieramos elementos hijo en el button la cosa cambiaría, ver demo:
+http://media.formandome.es/jquery/demo_mouseevents.html
+
+Observa que he comentado los alerts, porque según en que navegador hace un mouseout y un mouseenter. Con console.log se aprecia el comportamiento real
+
+-->

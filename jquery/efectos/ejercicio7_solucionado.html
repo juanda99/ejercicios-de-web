@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 7</title>
+<style>
+	img{ position: absolute; left:100px; top:100px; width:200px;}
+</style>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			//var right = $("img").offset().right; 
+			var left = $(window).width() - 400;
+			$("img").animate({
+			      width: $("img").width()*2,
+			      left:left
+			    });
+		});
+	});
+</script>
+</head>
+<body>
+	<button>Pulsa aquí</button>
+	<img src="imagenes/logo.png" alt="Logotipo CPIFP Los Enlaces"/>
+
+</body>
+</html>
+
+<!-- 
+Lo más importante, recordar el CSS:
+-Para poder cambiar las coordenadas del objeto, por css, la propiedad position no puede ser static!!!!
+-Si no tenemos el css así configurado, el animate no haría el left
+
+La imagen la llevo completamente a la derecha de la pantalla, por eso le resto el 400, que sería su nueva anchura, para que no se salga de la pantalla:
+var left = $(window).width() - 400; (quizá podía haber puesto $("img").width()*2 en vez del 400), como he hecho más abajo.
+
+Ojo, si volvemos a pulsar el botón la imagen ya no se mueve, pero se sigue ensanchando. Podríamos cambiar la anchura y en vez de la expresión poner 400px:
+	$("img").animate({
+			      width: $("img").width()*2, //400px
+			      left:left
+			    });
+			 
+Otra posibilidad, con el método one, nos garantizamos que se ejecute solo una vez (http://api.jquery.com/one/)
+    $("button").one('click',function(){
+       $('img').animate({left:'50%',width:$('img').width()*2})
+  });
+   
+
+
+Propiedad offset
+Podríamos utilizarla para ver la posición inicial del objeto. Del manual de jQuery:
+The .offset() method allows us to retrieve the current position of an element relative to the document. Contrast this with .position(), which retrieves the current position relative to the offset parent. When positioning a new element on top of an existing one for global manipulation (in particular, for implementing drag-and-drop), .offset() is more useful.
+
+.offset() returns an object containing the properties top and left.
+
+- 
+
+-->

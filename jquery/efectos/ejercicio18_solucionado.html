@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 9 - jQuery</title>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#opacidad").change(function(){
+		//.attr funcionaba en versiones anteriores:
+		//var opacidad = $("#opacidad").attr("value");
+		var opacidad = $("#opacidad").prop("value");
+		$("h1").fadeTo(1000,opacidad);
+		
+		/*podemos ver las distintas formas de obtener la opacidad viendo lo que se refleja en la consola:*/
+		/*el método attr funcionaba en jQuery 1.8 pero ya no: */
+		console.log ("Esta es la opacidad obtenida mediante el método attr: " + $("#opacidad").attr("value"));
+		console.log ("Esta es la opacidad obtenida mediante el método prop: " + $("#opacidad").prop("value"));
+		console.log ("Esta es la opacidad obtenida mediante el método val: " + $("#opacidad").val());
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Cambia la opacidad del título mediante un formulario</h1>
+	<form name="f1">
+		<p>Cambia de opacidad </p> 
+		<select name="opacidad" id="opacidad">
+			<option value="0.2">20%</option>
+			<option value="0.5">50%</option>
+			<option value="0.8">80%</option>
+			<option value="1">100%</option>
+		</select>
+	</form>
+</body>
+</html>

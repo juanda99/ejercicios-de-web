@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        button{margin-top:400px;}
+        img {position:absolute;}
+    </style>
+    <title>ejercicio 5 - jQuery</title>
+    <script src="jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#start").click(function() {
+                var right = $("img").offset().right;
+                var left = $(window).width() - 400;
+                /*
+                $("img").animate({
+                    width: '400px',
+                }, 3000, function() {
+                    $("img").animate({
+                        left: left
+                    }, 3000, function() {
+                        $("img").animate({
+                            width: '200px',
+                        }, 3000);
+                    });
+                });
+                            */
+                $("img").animate(
+                    { width: '400px'}
+                    , 10000
+                    )
+                .animate({
+                    left: left,
+                }, 10000)
+                .animate({
+                    width: '200px',
+                }, 10000);
+
+
+            });
+
+
+            $("#stop").click(function() {
+                $("img").stop();
+            });
+            $("#stopAll").click(function() {
+                $("img").finish();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <img src="imagenes/logo.png" alt="Logotipo Centro Integrado de Formación Profesional Los Enlaces" />
+    <button id="start">Comenzar animación</button>
+    <button id="stop">Parar animación</button>
+    <button id="stopAll">Parar animaciones</button>
+</body>
+
+</html>
+
+
+<!--Podríamos haber puesto todas las animaciones mediante funciones callback (líneas comentadas). En ese caso al hacer el stop pararía todas las animaciones en vez de una sola-->

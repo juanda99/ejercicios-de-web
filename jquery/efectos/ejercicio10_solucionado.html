@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ejercicio 1 - jQuery</title>
+<style>
+button {
+	padding: 12px;
+}
+</style>
+<script src="jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			$("p").fadeOut(10000, function(){
+				alert ("El párrafo se ha escondido AHORA");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+		in turpis sem, eu suscipit urna. Vestibulum odio purus, semper vitae
+		interdum non, placerat sit amet nunc. Ut scelerisque, lacus a laoreet
+		blandit, lectus libero placerat libero, eget volutpat turpis tellus
+		tincidunt tellus. Suspendisse imperdiet fermentum purus, et fringilla
+		est congue ac. Morbi enim ante, consequat eu tempus a, pulvinar vitae
+		felis. Vestibulum et sapien lectus. Curabitur odio ligula, gravida
+		quis tincidunt ut, ullamcorper nec metus. Duis non enim ante, non
+		pharetra nibh. Integer tellus lectus, condimentum eget bibendum vel,
+		posuere consequat eros. Class aptent taciti sociosqu ad litora
+		torquent per conubia nostra, per inceptos himenaeos.</p>
+	<button>Pulsa aquí</button>
+</body>
+</html>
