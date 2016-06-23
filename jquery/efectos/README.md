@@ -31,8 +31,8 @@ Debe haber tres botones, uno para empezar la animación, otro para parar cada an
 
 15. Crea un botón que lance tres alertas: al poner el ratón encima, al pulsar el botón o al mover el ratón fuera del botón. Optimiza tu código.
 
-16. Modifica el ejercicio7.html para que el efecto funcione tal y como se muestra en pantalla.
+16. Modifica el ejercicio16.html para que el efecto funcione tal y como se muestra en pantalla.
 
-17. Completa el ejercicio8 para que la imagen vuelva al punto inicial y repita el movimiento de ida y vuelta de forma indefinida.
+17. Completa el ejercicio17.hml para que la imagen vuelva al punto inicial y repita el movimiento de ida y vuelta de forma indefinida.
 
 18. Cambia la opacidad del título de ejercicio18.html pulsando en el desplegable.
