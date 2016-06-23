@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Bootstrap Grid</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    body{margin-bottom: 30px;}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1>Ejemploss del grid en Bootstrap 3</h1>
+            <h2>Los mejores futbolistas de la historia</h2>
+        </div>
+
+
+        <p>Vamoss a poner el texto siguiente en dos filas con 6 columnas en cada fila:</p>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Beckenbauer</h3>
+                <img class="img-responsive" src="./img/beckenbauer-0.jpg" alt="Frank Beckenbauer" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Cruyff</h3>
+                <img class="img-responsive" src="./img/cruyff-0.jpg" alt="Johan Cruyff" />
+            </div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Di Stefano</h3>
+                <img class="img-responsive" src="./img/distefano-0.jpg" alt="Alfredo Di Stefano" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Iniesta</h3>
+                <img class="img-responsive" src="./img/iniesta-0.jpg" alt="Don Andrés" />
+            </div>
+            <div class="clearfix visible-lg"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Maradona</h3>
+                <img class="img-responsive" src="./img/maradona-0.jpg" alt="Diego Armando Maradona" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Messi</h3>
+                <img class="img-responsive" src="./img/messi.jpg" alt="Leo Messi" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Pelé</h3>
+                <img class="img-responsive" src="./img/pele-0.jpg" alt="Edson Arantes do Nascimento" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Platini</h3>
+                <img class="img-responsive" src="./img/platini-0.jpg" alt="Michel Platini" />
+            </div>
+            <div class="clearfix visible-lg"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Ronaldinho</h3>
+                <img class="img-responsive" src="./img/ronaldinho-0.jpg" alt="Ronaldo de Assis Moreira" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Cristiano Ronaldo</h3>
+                <img class="img-responsive" src="./img/ronaldo-0.jpg" alt="Cristino Ronaldo" />
+            </div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Ronaldo Nazario</h3>
+                <img class="img-responsive" src="./img/ronaldo_nazario-0.jpg" alt="Ronaldo Nazario" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Van Basten</h3>
+                <img class="img-responsive" src="./img/vanbasten-0.jpg" alt="Marco Van Basten" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Observaciones:
+        - Las columnas van siempre dentro del row y el row dentro de un container
+        - En una row hay un total de 12 unidades de columnas, en este caso con 6: 2+2+2+2+2+2
+        - md significa medium devices: >= 992px, para tamaños más pequeños, al no estar indicado, las columnas se apilaran (podemos reducir la pantalla del navegador para ver el comportamiento.
+        - Para tamaños mayores, hasta 1200px lo único que pasará es que aumentarán los márgenes laterales (el container tiene un ancho fijo de 970px. A partir de 1200px el comportamiento será similar,
+          pero con un container de 1170px fijo, y por tanto columnas con mayor ancho.
+
+        - Cada row lo que hace es "limpiar los floats". Al ir las fotos de 4 en 4 o de 3 en 3, no queda otro remedio para que se vean bien las fotos que ponerlas en una única row, y cada vez que tuviera
+          que haber una row nueva según resoluciones, limpiar floats mediante la clase clearfix.
+
+        - Redimensión de imágenes
+          Podemos ver el tamaño de las imágenes mediante el comando identify del paquete imagemagick (sudo apt-get install imagemagick).
+          Las imagenes deberían tener una resolución de ancho igual a la que ocupan cuando se ven a mayor tamaño (no más para que no pesen en exceso ni menos, para que no se vean mal). Este tamaño corresponde con
+          la resolución de ventana de 767px. Las imágenes deberían tener un ancho entonces de 767px - 30px del padding del content-fluid (ojo con contar el scroll, que en el movil no está).
+            for i in `ls`;do convert $i -resize 737 $i;done
+          Ahora para quedarnos con las imágenes con la misma altura no queda más remedio que cortar por arriba o por abajo. Lo suyo sería hacerlo imagen a imagen con gimp, de forma algo artística, pero no hay tiempo:
+           for i in `ls`;do convert -crop 737x415 $i $i;done
+	   
+           Además tenemos que comprimir los ficheros, sin perdida: trimage -d ./img (es la forma más rápida, lo podemos hacer con Google Page Speed, pero el resultado es el mismo, y hay que ir imagen a imagen.     
+
+          
+-->

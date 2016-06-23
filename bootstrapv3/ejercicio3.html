@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Bootstrap Grid</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+         <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Futbol es futbol</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Defensas</a></li>
+              <li><a href="#">Centrocampistas</a></li>
+              <li><a href="#">Delanteros</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Premios <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Balón de Oro</a></li>
+                  <li><a href="#">Zamora</a></li>
+                  <li><a href="#">Pichichis</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Títulos de Equipo</li>
+                  <li><a href="#">Campeones de Europa</a></li>
+                  <li><a href="#">Campeones del mundo</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#">FC Barcelona</a></li>
+              <li><a href="#">Real Madrid</a></li>
+              <li><a href="#">Real Zaragoza</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+        <div class="container">
+        <div class="page-header">
+            <h1>Ejemploss del grid en Bootstrap 3</h1>
+            <h2>Los mejores futbolistas de la historia</h2>
+        </div>
+
+
+       <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Beckenbauer</h3>
+                <img class="img-responsive" src="./img/beckenbauer-0.jpg" alt="Frank Beckenbauer" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Cruyff</h3>
+                <img class="img-responsive" src="./img/cruyff-0.jpg" alt="Johan Cruyff" />
+            </div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Di Stefano</h3>
+                <img class="img-responsive" src="./img/distefano-0.jpg" alt="Alfredo Di Stefano" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Iniesta</h3>
+                <img class="img-responsive" src="./img/iniesta-0.jpg" alt="Don Andrés" />
+            </div>
+            <div class="clearfix visible-lg"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Maradona</h3>
+                <img class="img-responsive" src="./img/maradona-0.jpg" alt="Diego Armando Maradona" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Messi</h3>
+                <img class="img-responsive" src="./img/messi.jpg" alt="Leo Messi" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Pelé</h3>
+                <img class="img-responsive" src="./img/pele-0.jpg" alt="Edson Arantes do Nascimento" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Platini</h3>
+                <img class="img-responsive" src="./img/platini-0.jpg" alt="Michel Platini" />
+            </div>
+            <div class="clearfix visible-lg"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Ronaldinho</h3>
+                <img class="img-responsive" src="./img/ronaldinho-0.jpg" alt="Ronaldo de Assis Moreira" />
+            </div>
+            <div class="clearfix visible-md"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Cristiano Ronaldo</h3>
+                <img class="img-responsive" src="./img/ronaldo-0.jpg" alt="Cristino Ronaldo" />
+            </div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Ronaldo Nazario</h3>
+                <img class="img-responsive" src="./img/ronaldo_nazario-0.jpg" alt="Ronaldo Nazario" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <h3>Van Basten</h3>
+                <img class="img-responsive" src="./img/vanbasten-0.jpg" alt="Marco Van Basten" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
