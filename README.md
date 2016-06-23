@@ -1,7 +1,8 @@
-# ejercicios-de-web
-Repositorio con ejercicios cortos sobre diseño y desarrollo web ordenados por categorías
+
+# ejercicios de jQuery
+Ejercicios cortos sobre el uso de jQuery ordenados por categorías
 ## Categorías
-- [JavaScript](./javascript/README.md)
-- [jQuery](./jquery/README.md)
-- [css](./css/README.md)
-- [Video](./video/README.md)
+- [Efectos](./efectos/README.md)
+- [html y css](./html-css/README.md)
+- [Eventos](./eventos/README.md)
+- [AJAX](./ajax/README.md)
