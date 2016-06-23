@@ -2,11 +2,11 @@
 
 1. Al poner el ratón encima de los párrafos tiene que cambiar su color a rojo. Al salir el ratón del párrafo, debe volver a negro. Si hacemos clic sobre el primer párrafo se debe ejecutar la función clicAlerta(). Asocia los eventos con los elemento mediante el método on().
 
-Algunas preguntas...
+  Algunas preguntas...
 
-¿Qué eventos podrías utilizar para hacer la primera parte del ejercicio?
+  - ¿Qué eventos podrías utilizar para hacer la primera parte del ejercicio?
 
-¿Presenta algún comportamiento análogo el ejercicio? ¿Se te ocurre como podrías solucionarlo?
+  - ¿Presenta algún comportamiento análogo el ejercicio? ¿Se te ocurre como podrías solucionarlo?
 
 2. Al pulsar sobre el botón eliminaremos el evento clic del primer párrafo. Utiliza el método off() para resolver el ejercicio.
 

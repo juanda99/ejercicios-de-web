@@ -37,61 +37,61 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Beckenbauer</h3>
-                <img class="img-responsive" src="./img-solucion/beckenbauer-0.jpg" alt="Frank Beckenbauer" />
+                <img class="img-responsive" src="./img/beckenbauer-0.jpg" alt="Frank Beckenbauer" />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Cruyff</h3>
-                <img class="img-responsive" src="./img-solucion/cruyff-0.jpg" alt="Johan Cruyff" />
+                <img class="img-responsive" src="./img/cruyff-0.jpg" alt="Johan Cruyff" />
             </div>
             <div class="clearfix visible-sm"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Di Stefano</h3>
-                <img class="img-responsive" src="./img-solucion/distefano-0.jpg" alt="Alfredo Di Stefano" />
+                <img class="img-responsive" src="./img/distefano-0.jpg" alt="Alfredo Di Stefano" />
             </div>
             <div class="clearfix visible-md"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Iniesta</h3>
-                <img class="img-responsive" src="./img-solucion/iniesta-0.jpg" alt="Don Andrés" />
+                <img class="img-responsive" src="./img/iniesta-0.jpg" alt="Don Andrés" />
             </div>
             <div class="clearfix visible-lg"></div>
             <div class="clearfix visible-sm"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Maradona</h3>
-                <img class="img-responsive" src="./img-solucion/maradona-0.jpg" alt="Diego Armando Maradona" />
+                <img class="img-responsive" src="./img/maradona-0.jpg" alt="Diego Armando Maradona" />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Messi</h3>
-                <img class="img-responsive" src="./img-solucion/messi.jpg" alt="Leo Messi" />
+                <img class="img-responsive" src="./img/messi.jpg" alt="Leo Messi" />
             </div>
             <div class="clearfix visible-md"></div>
             <div class="clearfix visible-sm"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Pelé</h3>
-                <img class="img-responsive" src="./img-solucion/pele-0.jpg" alt="Edson Arantes do Nascimento" />
+                <img class="img-responsive" src="./img/pele-0.jpg" alt="Edson Arantes do Nascimento" />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Platini</h3>
-                <img class="img-responsive" src="./img-solucion/platini-0.jpg" alt="Michel Platini" />
+                <img class="img-responsive" src="./img/platini-0.jpg" alt="Michel Platini" />
             </div>
             <div class="clearfix visible-lg"></div>
             <div class="clearfix visible-sm"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Ronaldinho</h3>
-                <img class="img-responsive" src="./img-solucion/ronaldinho-0.jpg" alt="Ronaldo de Assis Moreira" />
+                <img class="img-responsive" src="./img/ronaldinho-0.jpg" alt="Ronaldo de Assis Moreira" />
             </div>
             <div class="clearfix visible-md"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Cristiano Ronaldo</h3>
-                <img class="img-responsive" src="./img-solucion/ronaldo-0.jpg" alt="Cristino Ronaldo" />
+                <img class="img-responsive" src="./img/ronaldo-0.jpg" alt="Cristino Ronaldo" />
             </div>
             <div class="clearfix visible-sm"></div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Ronaldo Nazario</h3>
-                <img class="img-responsive" src="./img-solucion/ronaldo_nazario-0.jpg" alt="Ronaldo Nazario" />
+                <img class="img-responsive" src="./img/ronaldo_nazario-0.jpg" alt="Ronaldo Nazario" />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <h3>Van Basten</h3>
-                <img class="img-responsive" src="./img-solucion/vanbasten-0.jpg" alt="Marco Van Basten" />
+                <img class="img-responsive" src="./img/vanbasten-0.jpg" alt="Marco Van Basten" />
             </div>
         </div>
     </div>
