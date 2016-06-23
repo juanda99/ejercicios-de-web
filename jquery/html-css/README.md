@@ -18,6 +18,7 @@
 5. Añade el jQuery/css que consideres necesario para que las filas impares tengan diferente aspecto (“zebra tables”) a las filas pares, con independencia del número de registros que tenga la tabla.
 
 6. Inicializa el formulario del ejercicio4 para que por defecto aparezca marcado que si gustan los deportes, y que sus deportes favoritos son Baloncesto, Tenis y Waterpolo. Debes hacerlo directamente mediante jQuery (simulando que la inicialización del formulario pudiera venir de una lectura previa de la bbdd).
+
 *Ayuda: Puedes utilizar el método val()*
 
 7. Completa el código del ejercicio7.html, de manera similar al ejercicio 6, para que el comportamiento del formulario sea dinámico (el contenido del textarea debe variar en función del select). 
