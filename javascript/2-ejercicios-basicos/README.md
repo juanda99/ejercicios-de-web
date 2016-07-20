@@ -13,7 +13,6 @@
 666666 
 7777777 
 ```
-
 3. Hacer una página web que genere una pirámide de 1 a 50, formada de la siguiente forma: 
 ```
 1 
@@ -28,7 +27,6 @@
 12345678910 
 1234567891011 
 ```
-
 4. Hacer una página que genere el juego del PUM hasta 100. Es decir, que escriba los números separados por coma y cada vez que encuentre un número terminado en 7 o múltiplo de 7 escriba PUM y cambie de línea:
 
 ```
