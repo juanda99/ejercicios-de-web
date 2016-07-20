@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prueba Cors</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="handlebars-v1.3.0.js"></script>
+    </head>
+    <body>
+        <div id="futbolistas">
+        <button id="enviar">Ver futbolistas</button>
+
+            
+        </div>
+
+
+
+        <script>
+$("#enviar").click(function(mievento) {
+    $.ajax({
+        type: 'GET',
+        "url": "http://www.media.formandome.es/phonegap/tutorial/futbolistas.php",
+        "dataType": "json",
+        success: function(data) {
+               $.each(data, function() {
+		     var futbolista="<h1>"+this.nombre + " " + this.apellido + "</h1> <p>Posición: " + this.posicion + "</p><p>Equipo: " + this.equipo + "</p><p>Descripción: " + this.desc + "</p" ;
+                     $("#futbolistas").append(futbolista);
+               });
+        }
+        
+    });
+});
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

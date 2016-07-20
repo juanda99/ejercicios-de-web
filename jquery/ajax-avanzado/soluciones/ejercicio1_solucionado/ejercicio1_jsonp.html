@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prueba Cors</title>
+        <script type="text/javascript" src="jquery.js"></script>
+    </head>
+    <body>
+       <button id="enviar">Pulsa aquí </button>
+	<script>
+                $("#enviar").click(function(mievento){
+                    $.ajax({
+			type: 'GET',
+    			"url": "http://www.media.formandome.es/phonegap/tutorial/futbolistas.php",
+    			"dataType": "jsonp",
+    			jsonpCallback: 'logicaCliente'
+                    });                   
+                });
+		function logicaCliente(data){
+    			console.log(data);
+		}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prueba Cors</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="handlebars.runtime-v1.3.0.js"></script>
+	<script type="text/javascript" src="templates.js"></script>
+    </head>
+    <body>
+        <div id="futbolistas">
+        <button id="enviar">Ver futbolistas</button>
+            
+        </div>
+
+
+
+        <script>
+$("#enviar").click(function(mievento) {
+    var promise = $.ajax({
+        		type: 'GET',
+        		"url": "http://www.media.formandome.es/phonegap/tutorial/futbolistas.php",
+        		"dataType": "json"
+		});
+        
+        promise.done(function (data){
+                var datos ={};
+                datos.futbolistas = data;                
+		var futbolistass  = Handlebars.templates.futbolistas(datos);
+                $("#futbolistas").html(futbolistass);
+        });        
+});
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
