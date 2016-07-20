@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 3</title>
+		<script type="text/javascript">
+			function factorial(numero) {
+					if (numero <= 1){
+						return 1;
+					}
+					return numero*factorial(numero - 1);
+				}
+			do{
+				var num1 = parseInt(prompt("Introduce el número para calcular el factorial"));
+			}while (isNaN(num1));
+			document.write (factorial(num1));
+		</script>		
+	</head>
+	<body>		
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript 3</title>
+</head>
+<body>
+	<script type="text/javascript"> 
+		var numero1 = prompt("Introduce un número", "");
+		var numero2 = prompt("Introduce otro número", "");
+		suma = parseInt(numero1) + parseInt(numero2);
+		multi = numero1 * numero2;
+		document.write(numero1 + "+" + numero2 + "=" + suma + "<br />");
+		document.write(numero1 + "*" + numero2 + "=" + multi);
+		
+		/*JavaScript es un lenguaje debilmente tipado, esto es, no se declaran el tipo de variables y luego hace conversiones implícitas
+		Las variables número1 y número2 se guardan como string, como podemos ver mediante consola si añadimos la siguiente línea en el JavaScript:
+		console.log( typeof numero1);
+		Sin embargo, se hace necesario utilizar un parseInt para hacer la suma. Esto se debe a que el operador + también sirve para concatenar en JavaScript.
+		Para hacer la multiplicación no existe esa ambiguedad y se hace la conversión de tipo de datos de forma implícita.
+		*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 4</title> 
+<style>
+    form {
+        position:fixed;
+        top: 100px;
+        left:100px;
+    }
+</style>
+<script type="text/javascript">
+	function coordenadas(elEvento) {
+		/*la siguiente línea por el explorer:*/
+		var evento = elEvento || window.event;
+		var x = evento.clientX;
+		var y = evento.clientY;
+		var coordenadaX = evento.screenX;
+		var coordenadaY = evento.screenY;
+		var coordenadaXabsoluta = evento.pageX;
+		var coordenadaYabsoluta = evento.pageY;
+		document.getElementById("x").value = x;
+		document.getElementById("y").value = y;
+		document.getElementById("xx").value = coordenadaX;
+		document.getElementById("yy").value = coordenadaY;
+		document.getElementById("xxx").value = coordenadaXabsoluta;
+		document.getElementById("yyy").value = coordenadaYabsoluta;
+	}
+	document.onmousemove = coordenadas;
+</script>
+</head>
+<body>
+	<form action="#">
+		<label for="x">Coordenada X navegador: </label> <input type="text"
+			id="x" /> <label for="y">Coordenada Y navegador: </label> <input
+			type="text" id="y" /> <br></br> <label for="xx">Coordenada X
+			monitor: </label> <input type="text" id="xx" /> <label for="yy">Coordenada
+			Y monitor: </label> <input type="text" id="yy" /> <br></br> <label for="xxx">Coordenada
+			X absoluta: </label> <input type="text" id="xxx" /> <label for="yyy">Coordenada
+			Y absoluta: </label> <input type="text" id="yyy" />
+	</form>
+	<div style="height:1000px;"></div>
+</body>
+</html>
+
+
+<!-- 
+    Ojo: Se genera mágicamente un parámetro, que recoge el evento en cuestión y sus propiedades
+    En Internet Explorer no se envía el parámetro, se recoge mediante window.Event, por eso, para "homogeneizar" el comportamiento entre navegadores se crea la siguiente sentencia:
+    var evento = elEvento || window.event;
+    Si la asociación evento-manejador no es mediante manejadores semánticos, se debe pasar el parámetro, si no, en Firefox por ejemplo no funciona (ver ejercicio 4-bis)
+
+    Al ejecutar el ejercicio debes apreciar que:
+    screenX -> Coordenadas respecto a la pantalla física
+    pageX -> Respecto a la hoja del navegador, puede haber scroll!
+    clientX -> Respecto a la ventana actual del navegador
+
+    Añado el div con esa altura para tener scroll en la página actual. Sí bajamos en el scroll quiero ver los datos que se generan en el formulario, por eso lleva un positon: fixed.
+-->

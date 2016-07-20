@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variante ejercicio 1 con manejadores semánticos</title>
+    <script>
+        window.onload = function ()
+        {
+            document.getElementById("id_link").onclick=test;
+        }
+    </script>
+</head>
+<body>
+	<script type="text/javascript">
+		function test() {
+            var attr = this.attributes[1].nodeName;
+            var valor= this.attributes[1].nodeValue;
+			alert(attr);
+			alert(valor);
+		}
+	</script>
+	<a href="#"  title="Enlace de prueba" id="id_link"  title="Enlace de prueba">Pulsa el enlace</a>
+
+</body>
+</html>
+<!--Con manejadores semánticos:
+    Podremos utilizar el this tranquilamente, sin pasarlo como parámetro
+    Es necesario hacer un window.onload, si no, al hacer el document.getElementById daría error (undefined) ya que el elemento id_link todavía no existe. Retrasamos la lectura de este código hasta que la página está completamente cargada.
+    Ojo, no pongas paréntesis: document.getElementById("id_link").onclick=test(); <- ESTARÍA MAL!!!!
+-->

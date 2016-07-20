@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 5</title>
+		<script type="text/javascript">
+			function info(cadena) {
+				var resultado = "La cadena \"" + cadena + "\" ";
+				// Comprobar mayúsculas y minúsculas
+				if(cadena == cadena.toUpperCase()) {
+					resultado += " está formada sólo por mayúsculas";
+				} else if(cadena == cadena.toLowerCase()) {
+					resultado += " está formada sólo por minúsculas";
+				} else {
+					resultado += " está formada por mayúsculas y minúsculas";
+				}
+				document.write(resultado)
+			}
+			do
+				cadena = prompt("Introduce una cadena para ver si está formada solo por mayúsculas o minúsculas");
+				cadena.
+			while (cadena.length==0);
+			info(cadena);
+		</script>
+	</head>
+	<body></body>
+</html>
+<!--En la variable resultado podiamos haber ocultado las comillas mediante comillas simples también:
+	var resultado = 'La cadena "' + cadena + '"';
+	Si utilizais Eclipse, los métodos de JavaScript los podréis obtener presionando CTRL + barra espaciadora, por ejemplo después de escribir "cadena."
+	Si no os sale el asistente de javascript, comprobad que tengáis instalado el plugin Javascript Development Tools
+	Ojo si habéis hecho copy-paste de ejercicios anteriores:
+	cadena = parseInt(prompt("Introduce una cadena para ver si está formada solo por mayúsculas o minúsculas"));
+	¡Al hacer luego el cadena.length, además de que no rellenaría, el método lenght estaría "undefined", ya que ese método no existe para los numéricos, si para el objeto String!
+ -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+</head>
+
+<body>
+<script type="text/javascript">
+        var crearH3=true;
+		function mostrar(num) {
+        var mensaje = document.getElementById("mensaje");
+			if (num==1) {
+                mensaje.innerHTML=" Has pasado el ratón por el enlace";
+				mensaje.style.display="inline";
+			}
+			else if (num==2){
+				mensaje.innerHTML=" Has pulsado el enlace";
+				mensaje.style.color="#0101ff";
+				mensaje.style.fontWeight="bold";
+				if (crearH3) {
+					var newH3=document.createElement("h3");
+					newH3.innerHTML="Enlace pulsado";
+					referencia=document.getElementById("id_link");
+					document.body.insertBefore(newH3, referencia);
+					crearH3=false;
+				}
+                return false;
+			}
+            else{
+                mensaje.innerHTML="";
+            }
+		}
+	</script>
+	<a href="http://www.marca.es" id="id_link" title="Enlace de prueba" onmouseover="mostrar(1)" onclick="return mostrar(2)" onmouseout="mostrar(3)">Pulsa el enlace</a><span id="mensaje" style="display:none;"></span>
+</body>
+
+</html>
+<!--
+        La variable crearH3 nos sirve para que solo se cree el elemento H3 una vez, en el primer onclick que hagamos. Comprueba debugeando con Firebug/Chrome Developer Tools que es así.
+-->	
+
+
+

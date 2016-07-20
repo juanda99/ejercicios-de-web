@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+    <script type="text/javascript">
+        function limita(elEvento, maximoCaracteres) {
+            var elemento = document.getElementById("texto");
+            // Obtener la tecla pulsada 
+            var evento = elEvento || window.event;
+            var codigoCaracter = evento.which || evento.keyCode;
+            if (elemento.value.length >= maximoCaracteres) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function actualizaInfo(maximoCaracteres) {
+            var elemento = document.getElementById("texto");
+            var info = document.getElementById("info");
+            if (elemento.value.length >= maximoCaracteres) {
+                info.innerHTML = "Máximo " + maximoCaracteres + " caracteres";
+            } else {
+                info.innerHTML = "Puedes escribir hasta " + (maximoCaracteres - elemento.value.length) + " caracteres adicionales";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="info">Máximo 100 caracteres</div>
+    <textarea id="texto" onkeypress="return limita(event, 100);" onkeyup="actualizaInfo(100)" rows="6" cols="30"></textarea>
+</body>
+
+</html>
+
+<!-- 
+    Al pulsar una tecla se producen sucesivamente los eventos keydown, keypress y keyup. Si hacemos un return false en el onkeypress, el
+caracter no se dibujará. 
+    El evento más adecuado para contabilizar los caracteres que quedan es onkeyup ya que ahí ya está dibujado si procede el último caracter.
+-->

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9</title>
+    <style>
+        form {
+        	margin: 30px;
+        	border-color: light-grey;
+        	border-width: 1px;
+        	width: 500px;
+        }
+        
+        label {
+        	display: block;
+        	width: 150px;
+        	text-align: right;
+        	float: left;
+        	clear: left;
+        	margin-right: 10px;
+        }
+        
+        input {
+        	display: block;
+        	width: 250px;
+        	text-align: left;
+        	clear: right;
+        }
+    </style>
+    <script type="text/javascript">
+        function ValidaCampos(formulario) {
+            /*definimos las expresinoes regulares*/
+            var val_telefono = /^\d{9}$/; // 9 cifras numéricas.
+            var val_dni = /^\d{8}[a-zA-Z]$/; // 8 cifras numéricas más un carácter alfabético.
+            var val_numerico = /^\d*$/;
+            var val_requerido = /\S+/;
+            var val_email = /^(.+\@.+\..+)$/;
+
+            /*recorremos los campos del formulario:*/
+            for (i = 0; i < formulario.elements.length - 1; i++) {
+                elemento = formulario.elements[i];
+                if (elemento.type != "text")
+                    continue;
+                var palabras = elemento.className.split(" ");
+                for (k = 0; k < palabras.length; k++) {
+                    switch (palabras[k]) {
+                        case "requerido":
+                            if (elemento.value.length < 1)
+                                alert("dni no valido");
+                            break;
+                        case "dni":
+                            if (!val_dni.test(elemento.value))
+                                alert("dni no valido");
+                            break;
+                        case "telefono":
+                            if (!val_telefono.test(elemento.value))
+                                alert("telefono no valido");
+                            break;
+                        case "numerico":
+                            if (!val_numerico.test(elemento.value))
+                                alert("el campo debe ser numérico");
+                            break;
+                        case "email":
+                            if (!val_email.test(elemento.value))
+                                alert("El email no es válido");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="formulario1" action="procesar.php" onSubmit="return ValidaCampos(this)">
+        <fieldset>
+            <legend>Formulario 1:</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="requerido texto" />
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" class="requerido texto" />
+            <label>Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" class="telefono" />
+            <label>Correo electrónico:</label>
+            <input type="text" id="correo" name="correo" class="requerido email" />
+            <label>DNI:
+            </label>
+            <input type="text" id="dni" name="dni" class="requerido dni" />
+            <input type="submit" value="enviar" />
+        </fieldset>
+    </form>
+
+    <form name="formulario2" action="procesar.php" onSubmit="return ValidaCampos(this)">
+        <fieldset>
+            <legend>Formulario 2:</legend>
+            <label>Dirección:</label>
+            <input type="text" id="direccion" name="direccion" />
+            <label>Código Postal:</label>
+            <input type="text" id="cp" name="cp" />
+            <label>Localidad:</label>
+            <input type="text" id="localidad" name="localidad" />
+            <label>Provincia:
+            </label>
+            <input type="text" id="provincia" name="provincia" />
+            <input type="submit" value="enviar" />
+        </fieldset>
+    </form>
+</body>
+
+</html>
+
+
+<!--
+    Esta es una forma muy habitual de trabajar en html actual. Se añaden clases que tienen su tratamiento en el framework de css
+    o en el plugin de javascript correspondiente. Así el desarrollador web puede implementar rápidamente y de forma intuitiva soluciones
+    de terceros.
+    
+    La forma más rápida de validar, como en el ejercicio hecho en hojas anteriores, mediante expresiones regulares.
+    
+    Además de los alert, la función debería tener un return false para que el formulario no se envíe y tenga sentido el código:
+    onSubmit="return ValidaCampos(this)"
+    
+    Ejercicio 10:
+    Para hacer el ejercicio 10, bastaría cambiar el alert de los elementos por sentencias del tipo:
+    elemento.style.backgroundColor='#ccc';
+    
+-->

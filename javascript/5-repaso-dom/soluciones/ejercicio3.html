@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function test() {
+            //document.getElementById("id_link").setAttribute('title', 'Título cambiado');
+            document.getElementById("id_link").title="Título cambiado2";
+            var titulo = document.getElementById("id_link").getAttribute('title');
+            alert(titulo);
+        }
+    </script>
+    <a href="#" title="Enlace de prueba" id="id_link" title="Enlace de prueba" onclick="test()">Pulsa el enlace</a>
+</body>
+</html>
+<!--Sería más cómodo hacer el ejercicio pasando la variable this como en el ejercicio anterior, pero también podemos obtener el elemento en cuestión con las funciones:
+    getElmementById
+    getElementByTagName
+    getElementByName
+    getElementByClassName
+
+Podemos utilizar el método setAttribute o no:
+    document.getElementById("id_link").title
+Lo mismo para el getAttribute
+-->

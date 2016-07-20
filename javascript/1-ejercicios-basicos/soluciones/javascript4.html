@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript 4</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var nombre = prompt("Introduce un nombre", "");
+		var nota = parseInt(prompt("Introduce una nota", ""));
+		if (nota > 4) {
+			document.write(nombre + " está aprobado con un " + nota);
+		}
+		/* Observaciones:
+		 - El parseInt no es necesario, si introducimos un número se hará el casting implícito en la evaluación del if
+		 - Si introducimos como nota caracteres no numéricos, puedes comprobar con el debug del navegador que el valor de nota pasa a ser NaN (not a number)
+		 */
+	</script>
+</body>
+</html>

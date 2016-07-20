@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7</title>
+    <script type="text/javascript">
+        function permite(elEvento, permitidos, elemento, numCaracteres) {
+            // Variables que definen los caracteres permitidos
+            var numeros = "0123456789";
+            var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            var numeros_caracteres = numeros + caracteres;
+            switch (permitidos) {
+                case 'num':
+                    permitidos = numeros;
+                    break;
+                case 'car':
+                    permitidos = caracteres;
+                    break;
+                case 'num_car':
+                    permitidos = numeros_caracteres;
+                    break;
+            }
+            // Obtener la tecla pulsada 
+            var evento = elEvento || window.event;
+            var codigoCaracter = evento.charCode || evento.keyCode;
+            var caracter = String.fromCharCode(codigoCaracter);
+            // Comprobar si la tecla pulsada se encuentra en los caracteres permitidos
+            // o si es una tecla especial
+            var permitido = permitidos.indexOf(caracter) != -1;
+            var longitud = elemento.value.length < numCaracteres;
+            return (permitidos.indexOf(caracter) != -1 && elemento.value.length < numCaracteres) ;
+        }
+    </script>
+</head>
+<body>
+    <label>Solo números
+        <input type="text" onkeypress="return permite(event, 'num', this, 10)" />
+    </label>
+    <label>Solo letras
+        <input type="text" onkeypress="return permite(event, 'car', this, 10)" />
+    </label>
+    <label>Letras y números
+        <input type="text" onkeypress="return permite(event, 'num_car', this, 10)" />
+    </label>
+</body>
+</html>
+<!--
+    Para controlar el máximo número de caracteres podríamos haber utilizado el atributo maxlength de html5. Destacar sin embargo que NO es compatible con Internet Explorer
+    para inputs de tipo textarea.
+    
+    Para hacer el ejercicio hemos tenido que desarrollar algo más la función permite, introduciendo dos parámetros adicionales, elemento y numCaracteres.
+    El primero lo usamos para controlar los caracteres que tiene el input en cuestión y el segundo para definir el máximo número de caracteres posibles.
+    
+    Observa que la tecla pulsada se obtiene mediante: 
+    var codigoCaracter = evento.charCode || evento.keyCode;
+    Dependiendo del navegador y la tecla pulsada (tecla especial como MAYS, CTRL o no) obtendremos un charcode o un keycode.
+    ¡Las discrepancias entre los distintos navegadores para eventos de teclas son para volverse loco!
+    Y el caracter al que corresponde mediante un método de la clase String.fromCharCode.
+    
+    
+    He eliminado el trozo de código de "teclas especiales" ya que si no, no funciona en Chrome:
+    Podemos ver que por ejemplo se "traga" el %. Sin embargo ahora no funcionan en Firefox las teclas especiales...
+    Para volverse loco: 
+    http://unixpapa.com/js/key.html
+    
+    No merece la pena luchar con todo esto, en nada trabajaremos a un nivel más alto mediante jQuery :-)
+    
+    
+-->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+    <style>
+        #contenedor{
+            height: 1200px;
+        }
+        form{
+            position:fixed;
+            top: 100px;
+            left:100px;
+        }
+    </style>
+    <script type="text/javascript">
+        function muestraInformacion(elEvento) {
+            var evento = elEvento || window.event;
+            var clientx = evento.clientX;
+            document.f1.clientX.value = clientx;
+            var clienty = evento.clientY;
+            document.f1.clientY.value = clienty;
+            var screenx = evento.screenX;
+            document.f1.screenX.value = screenx;
+            var screeny = evento.screenY;
+            document.f1.screenY.value = screeny;
+            var pagex = evento.pageX;
+            document.f1.pageX.value = pagex;
+            var pagey = evento.pageY;
+            document.f1.pageY.value = pagey;
+        }
+        /* Así si que funcionaría:
+            window.onload=function(){
+		        document.body.onmousemove=muestraInformacion;
+            }
+            */
+    </script>
+</head>
+<!-- Así no funcionaba en firefox, aunque en Chrome sí:
+	    <body onmousemove="muestraInformacion()"> -->
+<!--así funciona en ambos:-->
+
+<body onmousemove="muestraInformacion(event)">
+    <div id="contenedor">
+        <form name="f1">
+            Propiedad clientX
+            <input type="text" name="clientX">Propiedad clientX
+            <input type="text" name="clientY">
+            <br />Propiedad screenX
+            <input type="text" name="screenX">Propiedad screenX
+            <input type="text" name="screenY">
+            <br />Propiedad pageX
+            <input type="text" name="pageX">Propiedad pageX
+            <input type="text" name="pageY">
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+<!--Es necesario pasar el parámetro para luego recogerlo, al menos en Firefox, ver código más arriba
+Sigue haciendo falta, para tratar el evento también con Explorer, la siguiente sentencia:
+var evento = elEvento || window.event;
+-->

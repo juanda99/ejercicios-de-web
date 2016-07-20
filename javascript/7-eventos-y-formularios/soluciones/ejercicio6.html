@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 6</title> 
+<style>
+	body {margin:0px;}
+	.capa
+	{
+		float:left;
+		width:50%;
+	}
+	#roja {background-color:red;}
+	#verde {background-color:green;}
+	#amarilla {background-color:yellow;}
+	#azul {background-color:blue;}
+</style>
+
+<script type="text/javascript">	
+function mostrarInformacion(){
+	/*Así no funciona!!!!! por que no lo coge del css: ojo, si el css estuviera definido en modo inline sí!!! ????
+	    alert ("Has pulsado en " + this.style.backgroundColor);
+	*/ 
+	alert ("Has pulsado en " + this.getAttribute("id"));
+}
+	function tamanoVentanaNavegador() {
+		// Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+		var dimensiones = [];
+
+		if (typeof (window.innerWidth) == 'number') {
+			// No es IE
+			dimensiones = [ window.innerWidth, window.innerHeight ];
+		} else if (document.documentElement
+				&& (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+			//IE 6 en modo estandar (no quirks)
+			dimensiones = [ document.documentElement.clientWidth,
+					document.documentElement.clientHeight ];
+		} else if (document.body
+				&& (document.body.clientWidth || document.body.clientHeight)) {
+			//IE en modo quirks
+			dimensiones = [ document.body.clientWidth,
+					document.body.clientHeight ];
+		}
+
+		return dimensiones;
+	}
+	  
+	  
+	  var dimensiones = tamanoVentanaNavegador();
+	  var altura = dimensiones[1];
+	  var anchura = dimensiones[0];
+	 window.onload = function (){
+		 capas=document.getElementsByTagName("div");
+		 for (i=0; i<capas.length;i++){
+			 var alturapx = altura/2 + "px";
+			 var anchurapx = anchura/2 + "px"
+			/* capas[i].style.width= anchurapx;*/
+			 capas[i].style.height= alturapx;
+			capas[i].onclick=mostrarInformacion;
+		 }
+	 }
+	 
+	
+</script>
+</head>
+
+<body> 
+	<div id="roja" class="capa"></div>
+	<div id="verde" class="capa"></div>
+	<div id="amarilla" class="capa" ></div>
+	<div id="azul" class="capa" ></div>
+</body>
+</html>
+
+<!-- 
+    Cada una de las capas debe tener una anchura de la mitad de pantalla. Como un div es un elemento de tipo bloque (ocupa por defecto el 100% del ancho), al poner el 50%, queda perfectamente definido.
+    Para que haya dos div al mismo nivel, se deben poner mediante float.
+    
+    En cambio la altura no podemos hacerla con 50% ya que por defecto su altura es la de los objetos que contiene. Podemos aprovecharnos de la función javascript dada, para darle una altura a los div.
+    Otra posibilidad para dar la altura, sería aprovecharnos de nuestros conocimientos css y dejar de lado el javascript, lo vemos por curiosidad en la variante del ejercicio.
+    
+    Observa que aprovechando las capas no me hace falta obtener la zona que ha pinchado de otra forma más que conociendo quien dispara el evento (no hace falta hacer cálculos de la zona de la pantalla).
+    
+    Hemos tenido que definir el margin del body a 0px, para que quedase toda la pantalla pintada.
+-->

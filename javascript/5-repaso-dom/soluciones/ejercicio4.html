@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        function test(enlace) {
+            enlace.title="Enlace de prueba cambiado";
+        }
+    </script>
+    <a href="#" title="Enlace de prueba" id="id_link" title="Enlace de prueba" onmouseover="test(this)">Pulsa el enlace</a>
+
+</body>
+
+</html>
+<!--
+    Puedes observar con el firebug o Chrome developer Tools como el código que muestra no es el código inicial de la página,
+    el elemento <a> lo muestra con el nuevo title también desde el código una vez se haya producido el evento onmouseover.
+-->

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejercicio 3 - DOM básico y atributos XHTML</title>
+
+<script type="text/javascript">
+<!--
+	function anade() {
+		var elemento = document.createElement('li');
+		var texto = document.createTextNode('Elemento de prueba');
+		elemento.appendChild(texto);
+
+		var lista = document.getElementById('lista');
+		lista.appendChild(elemento);
+
+		var nuevoElemento = '<li>Texto de prueba</li>';
+		lista.innerHTML = lista.innerHTML + nuevoElemento;
+	}
+	//-->
+</script>
+</head>
+
+<body>
+
+	<ul id="lista">
+		<li>Lorem ipsum dolor sit amet</li>
+		<li>Consectetuer adipiscing elit</li>
+		<li>Sed mattis enim vitae orci</li>
+		<li>Phasellus libero</li>
+		<li>Maecenas nisl arcu</li>
+	</ul>
+
+	<input type="button" value="Añadir elemento" onclick="anade();" />
+
+</body>
+</html>
+<!-- Para añadir los elementos tenemos dos posibilidades:
+	1. Creamos el nuevo elemento li, su Nodo texto correspondiente y luego lo asociamos con 
+	el elemento padre, que ya existe en el DOM
+	2. Seleccionamos el elemento padre y añadimos el elemento mediante el método innerHTML
+	
+	Ojo que para que la página valide he tenido que cerrar el elemento button ya que esto es xhtml
+	Además he tenido que comentar las líneas de JavaScript para el html.
+	El // al final del comentario de html es para que "no le moleste" al javascript
+	
+ -->

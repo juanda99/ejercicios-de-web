@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var nombre = "Pepito";
+		var edad = 22;
+		var altura = 165;
+		var casado = "No";
+		document.write("Nombre: " + nombre);
+		document.write("<br />");
+		document.write("Edad: " + edad);
+		document.write("<br />");
+		document.write("Altura: " + altura);
+		document.write("<br />");
+		document.write("Casado: " + casado);
+		document.write("<br />");
+		/* Date cuenta de que:
+		- Los saltos de línea los hemos hecho mediante <br>. No podemos utilizar \n, ya que no es código javascript lo que acepta el método write del documento.
+		En el siguiente caso si encajaría poner \n:
+		alert("Nombre: " + nombre + "\nEdad:" + edad);
+		
+		Observa que pasa si cambiamos la variable "Pepito" por Pepito:
+		- Dará error ya que asignamos a la variable nombre, una variable sin definir.
+		- Localiza el mensaje de error que aparece en la consola del Firebug o de las Chrome Developer Tools del tipo:
+		  Uncaught ReferenceError: Pepito is not defined 
+		- Se corta la ejecución del JavaScript
+		*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function test(val) {
+            val.setAttribute("href", "http://www.soplaelcierzo.com");
+            //val.href="http://www.soplaelcierzo.com";
+            var attr = val.attributes[0].nodeName;
+            var valor = val.attributes[0].nodeValue;
+            //valor = "http://www.soplaelcierzo.com";
+            alert(attr);
+            alert(valor);
+        }
+    </script>
+    <a href="#" title="Enlace de prueba" id="id_link" title="Enlace de prueba" onclick="test(this);">Pulsa el enlace</a>
+</body>
+</html>
+
+<!-- 
+    Podemos utilizar tanto el método setAttribute como el atributo .href directamente: val.href="http://www.soplaelcierzo.com";
+    Otra opción sería cambiar el valor del nodo, ya que lo hemos guardado en la variable valor:
+            var valor = val.attributes[0].nodeValue;
+            valor = "http://www.soplaelcierzo.com";
+   -->

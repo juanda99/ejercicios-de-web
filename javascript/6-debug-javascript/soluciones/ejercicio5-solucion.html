@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>Ejercicio 1</title>
+<script type="text/javascript">
+	var str;
+	for (var i = 1; i <= 50; i++) {
+		for (var j = 1; j <= i; j++) {
+			str += i;
+		}
+		document.write(str + "<br/>");
+		/*reseteamos la variable str para la siguiente línea*/
+		str = "";
+	}
+</script>
+</head>
+<body>
+	<p>Texto de la página</p>
+</body>
+
+<!--El programa debería sacar filas tal que:
+El programa funciona a partir de la segunda fila, ya que entonces la variable str está inicializada. 
+-->

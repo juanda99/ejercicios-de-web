@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio de expresiones regulares con javascript</title>
+    <script type="text/javascript">
+        do {
+            var nombre = prompt("Escribe tu nombre");
+        } while (!comprobar_campos(nombre, "texto"));
+        do {
+            var tel = prompt("Escribe tu teléfono");
+        } while (!comprobar_campos(tel, "telefono"));
+        do {
+            var dni = prompt("Escribe tu DNI");
+        } while (!comprobar_campos(dni, "dni"));
+        do {
+            var email = prompt("Escribe tu correo electrónico");
+        } while (!comprobar_campos(email, "correo"));
+
+         //mostramos los datos:
+        document.write("Nombre:" + nombre + "<br/>");
+        document.write("Teléfono:" + tel + "<br/>");
+        document.write("DNI:" + dni + "<br/>");
+        document.write("e-mail:" + email);
+
+        function comprobar_campos(cadena, tipo_campo) {
+            switch (tipo_campo) {
+                case "texto":
+                    var patron = /^\D+$/;
+                    break;
+                case "telefono":
+                    var patron = /^\d{9}$/;
+                    break;
+                case "dni":
+                    var patron = /^\d{8}[a-zA-Z]$/;
+                    break;
+                case "correo":
+                    var patron = /^(.+\@.+\..+)$/;
+                    break;
+            }
+            return patron.test(cadena);
+        }
+    </script>
+</head>
+
+<body></body>
+
+</html>
+<!--
+    En ejercicios futuros haremos validaciones de formularios utilizando plugins de jQuery.
+    La esencia será la misma que este ejercicio:
+    - Creamos una función de validación, a la que le pasamos el campo a validar (variable cadena) y el tipo de validación que queremos (tipo_campo).
+    - En función de tipo_campo le asignaremos el patrón de validación que corresponda.
+    - Para el caso correo, podríamos haber decidido implementar la validación con la función validadni, que hicimos en un ejercicio anterior.
+
+
+-->
+

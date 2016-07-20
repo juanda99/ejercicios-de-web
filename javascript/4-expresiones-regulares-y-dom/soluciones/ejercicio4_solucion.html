@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejercicio 4</title>
+<style type="text/css">
+.oculto {
+	display: none;
+}
+.visible {
+	display: inline;
+}
+.importante {
+	color: red;
+}
+</style>
+<script type="text/javascript">
+	function muestra(mienlace) {
+		var elemento = document.getElementById("adicional");
+		elemento.className = "visible";
+		elemento.className += " importante";
+
+		//var enlace = document.getElementById("enlace");
+		//enlace.className = "oculto";
+		//mienlace.className="oculto";
+		mienlace.className="oculto";
+		return false;
+	}
+</script>
+</head>
+<body>
+	<p id="texto">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc,		posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante,
+		ornare id, aliquam vitae, ultrices porttitor, pede. 
+		<span
+			id="adicional" class="oculto">Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus
+			ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non
+			dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae,
+			venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer
+			lacus. Vestibulum venenatis erat eu odio. Praesent id metus.
+			</span>
+	</p>
+	<a id="enlace" href="#" onclick="return muestra(this)">Seguir
+		leyendo</a>
+
+</body>
+</html>
+
+<!-- 
+    En el onclick tenemos que evitar que el enlace se ejecute y nos lleve a otra página (#). Esto es hace con un return false, es decir:
+    onclick="funcion(); return false;"
+    En el código anterior, la propia función tiene el return false y para recogerlo, pongo también el return en el onclick.
+
+    Observad también como llamo a la función muestra enviandole el this como parámetro. Así me evito el document.getElementbyId que está comentado.
+    Incluso en muchos navegadores, sin el this, también funcionaria (escribiendo enlace.className en vez de mienlace.className). Esto es así porque hay cierta tendencia en los navegadores en guardar los "id" como variables globales, pero no es una buena práctica en nuestro desarrollo.
+    
+    El nuevo texto que añadimos podría tener también la letra de color rojo. Lo lógico sería hacerlo implementando una nueva clase, que la he llamado "importante".
+    Observa como se añade sin eliminar las clases que ya tuviera: elemento.className += " importante";
+-->

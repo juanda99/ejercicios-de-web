@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 2</title>
+		<script type="text/javascript">
+			do {
+				var num1 = parseInt(prompt("Introduce el primer número"));
+			} while (isNaN(num1));
+			do {
+				var num2 = parseInt(prompt("Introduce el segundo número"));
+			} while (isNaN(num2));
+			comprobar();
+
+			function comprobar() {
+				var str = "";
+				if(num1 > num2) {
+					str += "El número " + num1 + " es mayor que el número " + num2;
+				} else {
+					str += "El número " + num1 + " es menor o igual que el número " + num2;
+				}
+				str += "<br/>";
+				if(num2 >= 0) {
+					str += "El número " + num2 + " es positivo";
+				} else {
+					str += "El número " + num2 + " no es positivo";
+				}
+				str += "<br/>";
+				if(num1 < 0 || num1 != 0) {
+					str += "El número " + num1 + " es negativo o distinto de 0";
+				} else {
+					str += "El primer número es nulo";
+				}
+				str += "<br/>";
+				if((num1 + 1) >= num2) {
+					str += "Al sumar 1 al primer número el resultado es igual o mayor que el segundo número";
+				} else {
+					str += "Al sumar 1 al primer número el resultado es menor que el segundo número";
+				}
+				str += "<br/>";
+				document.write(str);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

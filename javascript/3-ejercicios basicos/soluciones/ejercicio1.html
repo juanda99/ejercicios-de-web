@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 1</title>
+		<script type="text/javascript">
+			var vector = new Array(true, 5, false, "Hola", "Adios", 2);
+			function comprobar() {
+				var str = "";
+				if(vector[4] > vector[3]) {
+					str = "La cuarta componente es mayor que la tercera";
+				} else {
+					str = "La cuarta componente es menor o igual que la tercera";
+				}
+				str += "<br/>";
+				if(vector[0] || vector[2]) {
+					str += "Entro en el OR";
+				} else {
+					str += "No entro en el OR";
+				}
+				str += "<br/>";
+				if(vector[0] && vector[2]) {
+					str += "Entro en el AND";
+				} else {
+					str += "No entro en el AND";
+				}
+				str += "<br/> Suma del elemento 2 y el 6: ";
+				str += (vector[1] + vector[5]);
+				str += "<br/>Resta del elemento 2 y el 6: ";
+				str += (vector[1] - vector[5]);
+				str += "<br/>Multiplicación del elemento 2 y el 6: ";
+				str += (vector[1] * vector[5]);
+				str += "<br/>División del elemento 2 entre el 6: ";
+				str += (vector[1] / vector[5]);
+				str += "<br/>Calcular el módulo entre el elemento 2 y 6:";
+				str += (vector[1] % vector[5]);
+				str += "<br/>";
+				document.write(str);
+			}
+		</script>
+	</head>
+	<body onload="comprobar()"></body>
+</html>
+

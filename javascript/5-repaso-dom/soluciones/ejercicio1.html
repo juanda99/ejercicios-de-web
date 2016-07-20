@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function test(val) {
+            var attr = val.attributes[1].nodeName;
+            var valor = val.attributes[1].nodeValue;
+            //var attr = val.attributes[1].name;
+            //var valor=val.attributes[1].value;
+            alert(attr);
+            alert(valor);
+        }
+    </script>
+    <a href="#" title="Enlace de prueba" id="id_link" onclick="test(this)">Pulsa el enlace</a>
+
+</body>
+
+</html>
+<!--Diferencias entre navegadores:
+    La colección de atributos es una lista desordenada. Firefox, la rellena empezando por el final, Chrome en cambio empieza por el principio.
+    Así el atributo(1) será el title en Chrome, pero el id desde Firefox 
+-->
+<!--Por lo visto .value o .name también funciona, pero lo suyo sería utilizar .nodeName o .nodeValue-->
+
+<!--¿Podrías hacer este ejercicio con manejadores semánticos?
+    ¿Qué pasaría con el this? ¿Es necesaria una función window.onload?
+    Piensa si tienes claras las respuestas y como lo harías. La solución está en el ejercicio1b.
+-->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function add_input() {
+			var new_input = document.createElement("input");
+			//propiedades CSS:
+			new_input.setAttribute("type", "text");
+			new_input.setAttribute("name", "nume[]");
+			new_input.style.display = 'block'; 
+			//Referencias para colocar la nueva caja de texto:
+			var referencia = document.getElementById('submit');
+			var formulario = referencia.parentNode;
+			// Colocamos el input
+			formulario.insertBefore(new_input, referencia);
+		}
+	</script>
+	<form action="">
+		<input type="text" name="nume[]" style="display:block;"/> 
+		<input type="submit" value="Submit" id="submit" /><br /> <br /> 
+		<input type="button" value="Add box" onclick="add_input()" />
+	</form>
+</body>
+</html>
+
+
+<!-- 
+    Tenemos que poner el display de tipo block ya que por defecto es inline y no colocaría una caja encima de la otra, tal y como está la primera respecto al botón.
+    El name viene como un array[] para poder recoger todos los posibles valores (no sabemos cuantos son), en el lado del servidor.
+-->
