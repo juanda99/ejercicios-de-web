@@ -10,4 +10,4 @@
 
 4. Modifica el ejercicio anterior para que los datos de la petición ajax se muestren mediante una promesa.
 
-5. Modifica la interfaz data para que los datos del ejercicio5 se obtengan mediante ajax, sqlite o localstorage.
+5. Modifica la interfaz data para que los datos del ejercicio5 se obtengan mediante ajax, sqlite o localstorage. Utiliza el código que se proporciona, las liberías de acceso a datos ya están desarrolladas ahí, ¡solo tienes que hacer la integración!
