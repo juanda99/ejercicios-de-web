@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <!--Estilos para cumplir con enunciado: -->
+    <style>
+        .important{color:red; font-weight:bold;}
+        label{display:inline-block; width:200px;}
+        input[type="submit"]{margin-left:200px;}
+         .error{width:auto; color:red;font-size:small;}
+    </style>
+    <!--Cargamos los scripts necesarios para poder hacer las validaciones:-->
+    <!--Los scripts se cargan siempre después de los css, nunca antes!-->
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jquery.validate.js"></script>
+</head>
+
+<body>
+    <form id="formulario" novalidate action="accion.php" method="post">
+        <div>
+            <label for="nombre">Nombre:
+                <span class="important">*</span>
+            </label>
+            <input type="text" id="nombre" name="nombre" />
+        </div>
+        <div>
+            <label for="email">E-mail:
+                <span class="important">*</span>
+            </label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div>
+            <label for="url">Url:</label>
+            <input type="url" id="url" name="url" />
+        </div>
+        <div>
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+    <script>
+        $("#formulario").validate({
+                onkeyup: false,
+                onfocusout: false,
+                onclick: false,
+                rules: {
+                    nombre: {
+                        required: true,
+                        minlength: 2,
+                        remote: "users_mod.php"
+                    },
+                    email: {
+                            required: true,
+                            remote: "emails.php"
+                    },
+                    comentarios: "required"
+                }
+                });
+    </script>
+</body>
+
+</html>
+
+
+<!-- Observaciones: 
+    Lo hacemos directamente con servidor. 
+    Ojo, que los scripts que proporciono no sirven tal cual, y por eso utilizamos users_mod.php en vez de users.php, 
+    ya que la variable que pasamos es nombre, y no username
+    
+    Se puede hacer el debug de la petición ajax con chrome developer tools. Podemos hacer el debug también de la parte de php.
+    Habría que instalar xdebug. Podéis ver indicaciones para netbeans en un enlace que he dejado en el Moodle. 
+    
+    
+-->

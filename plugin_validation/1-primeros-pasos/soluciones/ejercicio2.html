@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <style>
+        .important{color:red; font-weight:bold;}
+        label{display:inline-block; width:200px;}
+        input[type="submit"]{margin-left:200px;}
+    </style>
+    <!--Cargamos los scripts necesarios para poder hacer las validaciones:-->
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jquery.validate.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#formulario").validate();
+        });
+    </script>
+</head>
+<body>
+    <form id="formulario" novalidate action="accion.php" method="post">
+        <div>
+            <label for="nombre">Nombre:
+                <span class="important">*</span>
+            </label>
+            <input type="text" id="nombre" name="nombre" class="required" minlength="2" />
+        </div>
+        <div>
+            <label for="email">E-mail:
+                <span class="important">*</span>
+            </label>
+            <input type="email" id="email" name="email" class="email required"/>
+        </div>
+        <div>
+            <label for="url">Url:</label>
+            <input type="url" id="url" name="url" class="url" />
+        </div>
+        <div>
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" class="required"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+    <!--
+    <script>
+        $("#formulario").validate();
+    </script>
+    -->
+</body>
+
+</html>
+
+
+<!-- Observaciones: 
+    Los scripts se colocarán siempre más tarde que las hojas de estilos. 
+    Se debe cargar primero el de jQuery y luego el del plugin de jQuery. Siempre en ese orden.
+    La llamada al método validate() se puede hacer en el document ready, pero también poniéndolo al final del body (el plugin debe estar cargado previamente, eso sí).
+    Parece que la validación de los campos de tipo email y url se hace sin necesidad de definir la class asociada. :-)
+    
+    La validación del minlength también se podría haber hecho en html5 mediante el atributo pattern (todavía no está suficientemente estandarizado, mejor con javascript):
+    <input pattern=".{2,}" title="Al menos dos caracteres">
+    <input pattern=".{5,10}" title="Entre 5 y 10 caracteres">
+    
+    El plugin utiliza el atributo name, es importante ponerlo en cada elemento del formulario.
+    
+-->

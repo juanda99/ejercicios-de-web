@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <!--Estilos para cumplir con enunciado: -->
+    <style>
+        .important{color:red; font-weight:bold;}
+        label{display:inline-block; width:200px;}
+        input[type="submit"]{margin-left:200px;}
+    </style>
+    <!--Cargamos los scripts necesarios para poder hacer las validaciones:-->
+    <!--Los scripts se cargan siempre después de los css, nunca antes!-->
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jquery.validate.js"></script>
+</head>
+<body>
+    <form id="formulario" novalidate  action="accion.php" method="post">
+        <div>
+        <label for="nombre">Nombre:
+            <span class="important">*</span>
+        </label>
+        <input type="text" id="nombre" name="nombre" class="required" minlength="2"/>
+        </div>
+        <div>
+            <label for="email">E-mail:
+            <span class="important">*</span>
+        </label>
+        <input type="email" id="email" name="email" class="required" />
+        </div>
+        <div>
+        <label for="url">Url:</label>
+        <input type="url" id="url" name="url" class="url"/>
+        </div>
+        <div>
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" class="required"></textarea>
+        </div>
+        <div>
+        <input type="submit" value="Enviar" />
+        </div>
+    </form>
+    <script>
+        $("#formulario").validate({onkeyup: false, onfocusout: false, onclick:false});
+    </script>
+</body>
+
+</html>
+
+
+<!-- Observaciones: 
+     La validación se puede hacer en los siguientes instantes:
+     onsubmit, onfocusout, onkeyup, onclick
+     En principio validate la hace de todos los campos en el submit y luego la hace por cada "variación" que detecta en el formulario, de modo que sea poco intrusivo.
+     Sin embargo para los campos de type="email" y type="url" lo hace de forma instantánea.
+     
+     No son necesarias las class=url o email. Al ser el elemento del tipo url o email hace la validación sin necesidad del metadato.
+-->
